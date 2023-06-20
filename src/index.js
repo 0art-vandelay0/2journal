@@ -12,10 +12,18 @@ function handleSubmit(event) {
     const bodyInput = document.getElementById('body');
     
     const entry = new Entry(titleInput.value, bodyInput.value);
-    const response = entry.countWords();
+    const wordResponse = entry.countWords();
     const ptag = document.createElement('p');
-    ptag.append(response);
+    const vowelResponse = entry.countVowels();
+    const ptag2 = document.createElement('p');
+    const consResponse = entry.countConsonants();
+    const ptag3 = document.createElement('p');
+    ptag.append("Word count: " + wordResponse);
+    ptag2.append("Vowel count: " + vowelResponse);
+    ptag3.append("Consonants count: " + consResponse);
     document.querySelector('#entries').append(ptag);
+    document.querySelector('#entries').append(ptag2);
+    document.querySelector('#entries').append(ptag3);
     // entries.push(entry);
     // titleInput.value = '';
     // bodyInput.value = '';
