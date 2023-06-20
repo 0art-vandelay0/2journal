@@ -4,6 +4,30 @@ export default function Entry(title, body) {
 }
 
 Entry.prototype.countWords = function() {
-    // return this.body.split(' ').length;
-    return "This is a test";
+    return this.body.split(' ').length;
+};
+
+Entry.prototype.countVowels = function() {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let vowelCount = 0;
+    
+    for (let i = 0; i < this.body.length; i++) {
+        if (vowels.includes(this.body[i].toLowerCase())) {
+            vowelCount++;
+        }
+    }
+    return vowelCount;
+};
+
+Entry.prototype.countConsonants = function() {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let consCount = 0;
+    
+    for (let i = 0; i < this.body.length; i++) {
+        if (!vowels.includes(this.body[i].toLowerCase()) && this.body[i].match(/[a-z]/i)) {
+            consCount++;
+        }
+    }
+    
+    return consCount;
 };
