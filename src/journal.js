@@ -28,7 +28,6 @@ Entry.prototype.countConsonants = function() {
             consCount++;
         }
     }
-    
     return consCount;
 };
 
@@ -36,14 +35,7 @@ Entry.prototype.getTeaser = function() {
     const sentenceArray = this.body.split('.');
     const firstSentence = sentenceArray[0];
     const firstSentenceWords = firstSentence.split(' ');
-    let teaser = '';
-
-    if (firstSentenceWords.length <= 8) {
-        teaser = firstSentence;
-    } else {
-        for (let i = 0; i < 8; i++) {
-            teaser += firstSentenceWords[i] + ' ';
-        }
-    }
+    const firstEightWords = firstSentenceWords.slice(0, 8);
+    const teaser = firstEightWords.join(' ');
     return teaser;
 };
