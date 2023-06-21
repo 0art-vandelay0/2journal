@@ -24,7 +24,7 @@ function handleSubmit(event) {
     ptag.append("Word count: " + wordResponse);
     ptag2.append("Vowel count: " + vowelResponse);
     ptag3.append("Consonants count: " + consResponse);
-    ptag4.append("Sentence Teaser: " + teaser);
+    ptag4.append("Sentence Teaser: " + "\"" + teaser + "\"");
 
     document.querySelector('#entries').append(ptag);
     document.querySelector('#entries').append(ptag2);
